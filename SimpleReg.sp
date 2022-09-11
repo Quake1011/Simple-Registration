@@ -4,6 +4,15 @@ Database db;
 
 bool Authorized[MAXPLAYERS+1] = {false,...};
 
+public Plugin myinfo = 
+{
+    name = "Simple Reg",
+    author = "Quake1011",
+    description = "Test reg plugin",
+    version = "1.0",
+    url = "https://github.com/Quake1011/"
+}
+
 public void OnPluginStart()
 {
 	Database.Connect(SQLCallbax, "register");
@@ -28,7 +37,7 @@ public Action Remove(int client, int args)
 
 public void SQLCallbax(Database dbi, const char[] error, any data)
 {
-	if(!error[0] || dbi != INVALID_HANDLE) 
+	if(!error[0] && dbi != INVALID_HANDLE) 
 	{
 		db = dbi; 
 		CreateTables();
