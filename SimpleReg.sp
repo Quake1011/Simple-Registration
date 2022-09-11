@@ -45,12 +45,12 @@ public void CreateTables()
 {
 	char sQuery[256];
 	SQL_FormatQuery(db, sQuery, sizeof(sQuery), "CREATE TABLE IF NOT EXISTS `regs` (\
-																		`player_id` AUTO_INCREMENT, \
-																		`steam_id` VARCHAR(64) NOT NULL PRIMARY KEY, \
-																		`name` VARCHAR(64) NOT NULL , \
-																		`password` VARCHAR(64) NOT NULL , \
-																		`last_connect` INTEGER(11) NOT NULL, \
-																		`registration_data` INTEGER(11) NOT NULL)");
+		`player_id` AUTO_INCREMENT, \
+		`steam_id` VARCHAR(64) NOT NULL PRIMARY KEY, \
+		`name` VARCHAR(64) NOT NULL , \
+		`password` VARCHAR(64) NOT NULL , \
+		`last_connect` INTEGER(11) NOT NULL, \
+		`registration_data` INTEGER(11) NOT NULL)");
 	SQL_TQuery(db, SQLT, sQuery);
 }
 
